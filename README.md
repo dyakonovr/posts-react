@@ -1,1 +1,1 @@
-# posts-react
+# Блог постов на React (Redux)
