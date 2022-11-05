@@ -1,17 +1,17 @@
 import { SET_POSTS_DATA, SET_POSTS_ERROR } from './actions';
 
 const defaultState = {
-  posts: [],
+  data: [],
   dataIsLoaded: false,
   error: "",
 }
 
 export const postsReducer = (state = defaultState, action) => {
-  const { posts, error } = action;
+  const { data, error } = action;
 
   switch (action.type) {
     case SET_POSTS_DATA:
-      return { ...state, posts, dataIsLoaded: true };
+      return { ...state, data, dataIsLoaded: true };
     case SET_POSTS_ERROR:
       return { ...state, error };
     default:
@@ -19,8 +19,8 @@ export const postsReducer = (state = defaultState, action) => {
   }
 };
 
-export function setPostsData(posts) {
-  return { type: SET_POSTS_DATA, posts }
+export function setPostsData(data) {
+  return { type: SET_POSTS_DATA, data }
 }
 
 export function setPostsError(error) {

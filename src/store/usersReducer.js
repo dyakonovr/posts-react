@@ -1,17 +1,17 @@
 import { SET_USERS_DATA, SET_USERS_ERROR } from './actions';
 
 const defaultState = {
-  users: [],
+  data: [],
   dataIsLoaded: false,
   error: "",
 }
 
 export const usersReducer = (state = defaultState, action) => {
-  const { users, error } = action;
+  const { data, error } = action;
 
   switch (action.type) {
     case SET_USERS_DATA:
-      return { ...state, users, dataIsLoaded: true };
+      return { ...state, data, dataIsLoaded: true };
     case SET_USERS_ERROR:
       return { ...state, error };
     default:
@@ -19,8 +19,8 @@ export const usersReducer = (state = defaultState, action) => {
   }
 };
 
-export function setUsersData(users) {
-  return { type: SET_USERS_DATA, users }
+export function setUsersData(data) {
+  return { type: SET_USERS_DATA, data }
 }
 
 export function setUsersError(error) {
