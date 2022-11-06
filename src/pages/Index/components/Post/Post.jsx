@@ -1,6 +1,6 @@
-import classes from './PostItem.module.css';
+import classes from './Post.module.css';
 
-const PostItem = ({ post, user }) => {
+const Post = ({ post, user }) => {
   return (
     <li className={classes.item} data-post-id={post.id} data-user-id={user.id}>
       <div className={classes.header}>
@@ -17,4 +17,4 @@ const PostItem = ({ post, user }) => {
   );
 };
 
-export default PostItem;
+export default Post;

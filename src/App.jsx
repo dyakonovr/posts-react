@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import PostsList from './components/PostsList/PostsList';
 import './style/App.css';
 import { store } from './store/store';
 import { setPostsData, setPostsError } from './store/postsReducer';
 import { setUsersData, setUsersError } from './store/usersReducer';
+import Pages from './pages/Pages';
 
 function App() {
   // Получаю все фотографии в виде .JSON и передаю их в store
@@ -30,11 +30,9 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1 className='title'>Посты</h1>
-        <PostsList />
+        <Pages />
       </div>
     </Provider>
-
   )
 }
 
