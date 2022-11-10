@@ -1,0 +1,30 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: #161616;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.page:not(:first-child) {
+  margin: 0 0 0 7px;
+}
+
+.page:hover {
+  background-color: #fff;
+  color: #161616;
+}
+
+.page_active {
+  background-color: #fff;
+  color: #161616;
+}

@@ -4,7 +4,7 @@ import Preloader from "../components/Preloader/Preloader";
 import { useSelector } from 'react-redux'
 
 const Index = () => {
-  const dataIsLoaded = useSelector(store => store.posts.dataIsLoaded)
+  const dataIsLoaded = useSelector(store => store.posts.dataIsLoaded);
 
   return (
     <>

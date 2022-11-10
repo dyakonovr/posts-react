@@ -6,9 +6,9 @@ const Pages = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Index />} />
+        <Route path='/:page' element={<Index />} />
         <Route path='/user/' element={<User />} />
-        <Route path='*' element={<Navigate to='/' />} />
+        <Route path='*' element={<Navigate to='/1' />} />
       </Routes>
     </Router>
 
