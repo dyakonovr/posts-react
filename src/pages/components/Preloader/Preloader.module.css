@@ -1,9 +1,10 @@
 .preloader {
-  display: inline-block;
+  display: flex;
+  align-self: center;
   position: relative;
   width: 80px;
   height: 80px;
-  margin: 50px 0 0;
+  margin: 200px 0 0;
 }
 
 .preloader div {

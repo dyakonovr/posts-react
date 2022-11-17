@@ -1,4 +1,4 @@
-import { SET_USERS_DATA, SET_USERS_ERROR } from './actions';
+import { SET_USERS_DATA, SET_USERS_ERROR } from '../actions';
 
 const defaultState = {
   data: [],

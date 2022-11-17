@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import './style/App.css';
 import { store } from './store/store';
-import { setPostsData, setPostsError, setPostsPerPage } from './store/postsReducer';
-import { setUsersData, setUsersError } from './store/usersReducer';
+import { setPostsData, setPostsError, setPostsPerPage } from './store/reducers/postsReducer';
+import { setUsersData, setUsersError } from './store/reducers/usersReducer';
 import Pages from './pages/Pages';
 
 function App() {
@@ -17,35 +17,8 @@ function App() {
         (result) => {
           const { postsPerPage, posts, users } = result[0];
 
-          // Обрабатываю массив постов (разбиваю его на постраничные массивы)
-
-          // Создаю вспомогательный массив
-          let postsByPages = [];
-
-          // Если кол-во постов, деленных на collectionsOnPage >, чем одна == страниц больше, чем одна
-          if (posts.length / postsPerPage > 1) {
-            // Перебираю весь массив
-            for (let i = 0; i < posts.length; i++) {
-              // Если пост должен быть на след. странице
-              if ((i / postsPerPage) === Math.ceil(i / postsPerPage)) {
-                // Создаём новую страницу и добавляем его туда
-                postsByPages.push([posts[i]]);
-              }
-              // Иначе
-              else {
-                // Добавляем его в массив конкретной страницы
-                postsByPages[postsByPages.length - 1].push(posts[i]);
-              }
-            }
-
-          } else { // Если страница только одна
-            postsByPages = [posts];
-          }
-
-          // Обрабатываю массив постов (разбиваю его на постраничные массивы) END
-
           store.dispatch(setPostsPerPage(postsPerPage)); // Добавляю список пользователей в store
-          store.dispatch(setPostsData(postsByPages)); // Добавляю посты в store
+          store.dispatch(setPostsData(posts)); // Добавляю посты в store
           store.dispatch(setUsersData(users)); // Добавляю список пользователей в store
         },
         (error) => {

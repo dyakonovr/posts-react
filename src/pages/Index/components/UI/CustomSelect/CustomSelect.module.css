@@ -1,0 +1,38 @@
+.options {
+  height: 40px;
+  font-size: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 100%;
+  z-index: 15;
+  user-select: none;
+  max-width: 500px;
+}
+
+.option {
+  border-bottom: 1px solid #161616;
+  padding: 5px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  color: #161616;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.options[data-opened=true] .option {
+  opacity: 1;
+  visibility: visible;
+}
+
+.option_default {
+  border-bottom: 3px solid #161616;
+  opacity: 1;
+  visibility: visible;
+}
+
+.option:hover {
+  background-color: #161616;
+  color: #fff;
+}
