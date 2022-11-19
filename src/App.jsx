@@ -36,7 +36,7 @@ function App() {
         <Pages />
       </div>
     </Provider>
-  )
+  );
 }
 
 export default App

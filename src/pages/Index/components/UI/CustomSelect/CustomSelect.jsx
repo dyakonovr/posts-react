@@ -2,11 +2,14 @@ import { useRef } from 'react';
 import classes from './CustomSelect.module.css';
 import { useDispatch } from 'react-redux'
 import { toggleAllPosts } from '../../../../../store/reducers/postsReducer';
+import useCustomSearchParams from '../../../../../hooks/useCustomSearchParams';
 
 const CustomSelect = () => {
   const dispatch = useDispatch();
   const listRef = useRef(null);
   const firstOptionRef = useRef(null);
+
+  const { setNewSearchParams } = useCustomSearchParams();
 
   // Функции
   function handleMenuClick(currentTarget) {
@@ -23,13 +26,14 @@ const CustomSelect = () => {
 
       if (currentTarget.dataset.value && currentTarget.dataset.value === "all") {
         dispatch(toggleAllPosts(true));
+        setNewSearchParams({ page: 1 });
       }
       else if (currentTarget.dataset.value && currentTarget.dataset.value === "several") {
         dispatch(toggleAllPosts(false));
       }
     }
 
-    
+
   }
   // Функции END
 
