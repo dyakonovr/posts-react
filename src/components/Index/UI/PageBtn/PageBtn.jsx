@@ -1,5 +1,5 @@
 import classes from './PageBtn.module.css';
-import useCustomSearchParams from '../../../../../hooks/useCustomSearchParams';
+import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
 
 const PageBtn = ({ number, current }) => {
   const { setNewSearchParams } = useCustomSearchParams();

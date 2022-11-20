@@ -2,14 +2,14 @@ import Post from '../Post/Post';
 import classes from './PostsList.module.css';
 import { useSelector } from 'react-redux'
 import Pagination from '../UI/Pagination/Pagination';
-import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
+import useCustomSearchParams from '../../../hooks/useCustomSearchParams';
 
 const PostsList = () => {
   const users = useSelector(state => state.users.data); // Получаю массив пользователей
-  const postsPerPage = useSelector(state => state.posts.postsPerPage);
+  const postsPerPage = useSelector(state => state.renderParams.postsPerPage);
   const posts = useSelector(state => state.posts.data); // Получаю массив постов
   let numbersOfPages = null;
-  const showAllPosts = useSelector(state => state.posts.showAllPosts); // Параметр, к-ый показывает, нужно ли показывать все посты на одной странице (true) или показывать их по страницам (false)
+  const showAllPosts = useSelector(state => state.renderParams.showAllPosts); // Параметр, к-ый показывает, нужно ли показывать все посты на одной странице (true) или показывать их по страницам (false)
   const { currentSearchParams } = useCustomSearchParams();
   const page = Number(currentSearchParams.page); // Получаю текущую страницу
 

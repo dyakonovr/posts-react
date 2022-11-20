@@ -1,7 +1,7 @@
-import PostsList from "./components/PostsList/PostsList";
-import AnimatedPage from "../components/AnimatedPage/AnimatedPage";
-import Preloader from "../components/Preloader/Preloader";
-import CustomSelect from './components/UI/CustomSelect/CustomSelect';
+import PostsList from '../../components/Index/PostsList/PostsList';
+import AnimatedPage from "../../components/universal/AnimatedPage/AnimatedPage";
+import Preloader from '../../components/universal/Preloader/Preloader';
+import CustomSelect from '../../components/Index/UI/CustomSelect/CustomSelect';
 import { useSelector } from 'react-redux';
 import classes from './Index.module.css';
 

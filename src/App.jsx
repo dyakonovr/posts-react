@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import './style/App.css';
 import { store } from './store/store';
-import { setPostsData, setPostsError, setPostsPerPage } from './store/reducers/postsReducer';
+import { setPostsData, setPostsError } from './store/reducers/postsReducer';
 import { setUsersData, setUsersError } from './store/reducers/usersReducer';
+import { setPostsPerPage } from './store/reducers/renderParamsReducer';
 import Pages from './pages/Pages';
 
 function App() {

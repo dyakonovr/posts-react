@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import classes from './CustomSelect.module.css';
 import { useDispatch } from 'react-redux'
-import { toggleAllPosts } from '../../../../../store/reducers/postsReducer';
-import useCustomSearchParams from '../../../../../hooks/useCustomSearchParams';
+import { toggleAllPosts } from '../../../../store/reducers/renderParamsReducer';
+import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
 
 const CustomSelect = () => {
   const dispatch = useDispatch();

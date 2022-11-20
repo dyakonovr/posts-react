@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  border: 1px solid #fff;
+  padding: 20px;
+}
+
+.avatar img {
+  border-radius: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 50px;
+}
+
+.fullname {
+  font-size: 25px;
+  color: #fff;
+}
+
+.email {
+  margin: 10px 0 0;
+  color: #8b8b8b;
+}
+
+.id {
+  margin: 0 0 0 auto;
+  color: #5e5e5e;
+}
+
