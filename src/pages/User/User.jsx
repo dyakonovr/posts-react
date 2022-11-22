@@ -7,6 +7,8 @@ import createFilteredPostsByID from "../../functions/createFilteredPostsByID";
 import useCustomSearchParams from "../../hooks/useCustomSearchParams";
 import AnimatedPage from "../../components/universal/AnimatedPage/AnimatedPage";
 import classes from "./User.module.css";
+import { withErrorBoundary } from "react-error-boundary";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const User = () => {
   const postsIsLoaded = useSelector(state => state.posts.dataIsLoaded);
@@ -25,7 +27,7 @@ const User = () => {
   if (postsIsLoaded && usersIsLoaded) {
     return (
       <AnimatedPage>
-        <Link to={"/posts/?page=1"} className={classes.link}>&larr; Вернуться на страницу всех постов</Link>
+        <Link to={"/"} className={[classes.link, "link-w-underline"].join(' ')}>&larr; Вернуться на страницу всех постов</Link>
         <Header user={users[userID - 1]} numbersOfPosts={userPosts.length} />
         <Posts title={"Посты пользователя"} posts={userPosts} users={users} />
       </AnimatedPage>
@@ -37,4 +39,6 @@ const User = () => {
 
 };
 
-export default User;
+export default withErrorBoundary(User, {
+  fallback: <ErrorPage />
+});

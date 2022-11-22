@@ -2,6 +2,8 @@ import Posts from '../../components/universal/Posts/Posts';
 import { useSelector } from 'react-redux'
 import Preloader from '../../components/universal/Preloader/Preloader';
 import AnimatedPage from "../../components/universal/AnimatedPage/AnimatedPage";
+import ErrorPage from '../ErrorPage/ErrorPage';
+import { withErrorBoundary } from "react-error-boundary";
 
 const Index = () => {
   const usersIsLoaded = useSelector(state => state.users.dataIsLoaded);
@@ -22,4 +24,6 @@ const Index = () => {
 
 };
 
-export default Index;
+export default withErrorBoundary(Index, {
+  fallback: <ErrorPage />
+});
