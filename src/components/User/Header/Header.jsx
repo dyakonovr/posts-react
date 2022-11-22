@@ -1,15 +1,6 @@
-import { useSelector } from 'react-redux';
-import useCustomSearchParams from '../../../hooks/useCustomSearchParams';
 import classes from './Header.module.css';
 
-const Header = () => {
-  const users = useSelector(store => store.users.data);
-  const { currentSearchParams } = useCustomSearchParams();
-  const userID = Number(currentSearchParams.id);
-  const user = users[userID - 1];
-
-  console.log(user);
-
+const Header = ({ user }) => {
   return (
     <div className={classes.header}>
       <div className={classes.avatar}>

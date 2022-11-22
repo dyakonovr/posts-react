@@ -3,15 +3,18 @@ import classes from './PostsList.module.css';
 import { useSelector } from 'react-redux'
 import Pagination from '../UI/Pagination/Pagination';
 import useCustomSearchParams from '../../../hooks/useCustomSearchParams';
+import Preloader from "../Preloader/Preloader";
 
-const PostsList = () => {
-  const users = useSelector(state => state.users.data); // Получаю массив пользователей
-  const postsPerPage = useSelector(state => state.renderParams.postsPerPage);
-  const posts = useSelector(state => state.posts.data); // Получаю массив постов
+const PostsList = ({ posts, users }) => {
   let numbersOfPages = null;
+  const postsPerPage = useSelector(state => state.renderParams.postsPerPage);
   const showAllPosts = useSelector(state => state.renderParams.showAllPosts); // Параметр, к-ый показывает, нужно ли показывать все посты на одной странице (true) или показывать их по страницам (false)
+  // Статус загрузки данных
+  const postsIsLoaded = useSelector(state => state.posts.dataIsLoaded);
+  const usersIsLoaded = useSelector(state => state.users.dataIsLoaded);
+  // Получение текущей страницы
   const { currentSearchParams } = useCustomSearchParams();
-  const page = Number(currentSearchParams.page); // Получаю текущую страницу
+  const page = Number(currentSearchParams.page);
 
   // Функции
   function createFilteredPostsLists(posts, postsPerPage) {
@@ -70,20 +73,24 @@ const PostsList = () => {
   // Функции END
 
 
-  return (
-    <>
-      <ul className={classes.list}>
-        {createPostsList(posts, showAllPosts, page)}
-      </ul>
-      {
-        numbersOfPages > 1 // Если страниц больше, чем одна
-          ? // Рисуем пагинацию
-          <Pagination numbersOfPages={numbersOfPages} page={page} />
-          : // Иначе не рисуем ничего
-          false
-      }
-    </>
-  );
+  if (postsIsLoaded && usersIsLoaded) {
+    return (
+      <>
+        <ul className={classes.list}>
+          {createPostsList(posts, showAllPosts, page)}
+        </ul>
+        {
+          numbersOfPages > 1 // Если страниц больше, чем одна
+            ? // Рисуем пагинацию
+            <Pagination numbersOfPages={numbersOfPages} page={page} />
+            : // Иначе не рисуем ничего
+            false
+        }
+      </>
+    );
+  } else {
+    return (<Preloader />)
+  }
 };
 
 export default PostsList;

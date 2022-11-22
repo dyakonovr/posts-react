@@ -8,7 +8,7 @@ const CustomSelect = () => {
   const dispatch = useDispatch();
   const listRef = useRef(null);
   const firstOptionRef = useRef(null);
-
+  
   const { setNewSearchParams } = useCustomSearchParams();
 
   // Функции

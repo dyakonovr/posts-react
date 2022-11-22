@@ -2,7 +2,6 @@
   padding: 20px;
   border: 1px solid #fff;
   border-radius: 5px;
-  cursor: pointer;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -11,7 +10,8 @@
   transform: translate(0, -5px);
 }
 
-.item:hover .name, .item:hover .text {
+.item:hover .name,
+.item:hover .text {
   color: #161616;
 }
 
@@ -26,7 +26,7 @@
 
 .avatar img {
   width: 50px;
-  height: 50px; 
+  height: 50px;
   border-radius: 100%;
 }
 
@@ -47,4 +47,11 @@
   color: #fff;
   transition: color 0.2s ease-in-out;
   margin: 20px 0 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
 }
