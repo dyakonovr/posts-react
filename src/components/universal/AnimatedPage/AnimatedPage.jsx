@@ -1,3 +1,4 @@
+// Полезные штуки
 import { motion } from 'framer-motion';
 
 const AnimatedPage = ({ children }) => {

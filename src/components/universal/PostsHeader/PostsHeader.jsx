@@ -1,5 +1,7 @@
-import classes from './PostsHeader.module.css';
+// Компоненты
 import CustomSelect from '../UI/CustomSelect/CustomSelect';
+// Классы
+import classes from './PostsHeader.module.css';
 
 const PostsHeader = ({ title }) => {
   return (

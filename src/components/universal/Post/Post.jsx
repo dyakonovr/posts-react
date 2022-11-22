@@ -1,6 +1,9 @@
-import classes from './Post.module.css';
+// Полезные штуки
 import { Link } from 'react-router-dom';
+// Функции
 import scrollToTop from '../../../functions/scrollToTop';
+// Классы
+import classes from './Post.module.css';
 
 const Post = ({ post, user }) => {
   const pathToUserPage = `/user/?id=${user.id}&page=1`;

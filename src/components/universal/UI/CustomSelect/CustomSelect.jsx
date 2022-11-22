@@ -1,8 +1,12 @@
+// Полезные штуки
 import { useRef } from 'react';
-import classes from './CustomSelect.module.css';
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
+// Функции
 import { toggleAllPosts } from '../../../../store/reducers/renderParamsReducer';
+// Кастомные хуки
 import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
+// Классы
+import classes from './CustomSelect.module.css';
 
 const CustomSelect = () => {
   const dispatch = useDispatch();

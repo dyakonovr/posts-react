@@ -1,3 +1,4 @@
+// Классы
 import classes from './Preloader.module.css';
 
 const Preloader = () => {

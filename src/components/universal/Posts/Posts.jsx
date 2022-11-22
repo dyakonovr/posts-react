@@ -1,3 +1,4 @@
+// Компоненты
 import PostsHeader from '../PostsHeader/PostsHeader';
 import PostsList from '../PostsList/PostsList';
 

@@ -1,9 +1,12 @@
-import Post from '../Post/Post';
-import classes from './PostsList.module.css';
+// Полезные штуки
 import { useSelector } from 'react-redux'
-import Pagination from '../UI/Pagination/Pagination';
 import useCustomSearchParams from '../../../hooks/useCustomSearchParams';
+// Компоненты
+import Post from '../Post/Post';
+import Pagination from '../UI/Pagination/Pagination';
 import Preloader from "../Preloader/Preloader";
+// Классы
+import classes from './PostsList.module.css';
 
 const PostsList = ({ posts, users }) => {
   let numbersOfPages = null;

@@ -1,6 +1,9 @@
-import classes from './PageBtn.module.css';
+// Хуки
 import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
+// Функции
 import scrollToTop from '../../../../functions/scrollToTop';
+// Классы
+import classes from './PageBtn.module.css';
 
 const PageBtn = ({ number, current }) => {
   const { setNewSearchParams } = useCustomSearchParams();

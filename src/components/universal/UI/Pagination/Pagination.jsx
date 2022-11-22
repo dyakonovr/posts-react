@@ -1,4 +1,6 @@
+// Компоненты
 import PageBtn from '../PageBtn/PageBtn';
+// Классы
 import classes from './Pagination.module.css';
 
 const Pagination = ({ numbersOfPages, page }) => {
