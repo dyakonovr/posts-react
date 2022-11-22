@@ -1,17 +1,13 @@
 import classes from './PageBtn.module.css';
 import useCustomSearchParams from '../../../../hooks/useCustomSearchParams';
+import scrollToTop from '../../../../functions/scrollToTop';
 
 const PageBtn = ({ number, current }) => {
   const { setNewSearchParams } = useCustomSearchParams();
 
   // Функции
   function handlePageChange(page) {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-
+    scrollToTop();
     setNewSearchParams({ page });
   }
   // Функции END
